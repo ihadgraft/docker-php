@@ -24,5 +24,13 @@ RUN apk update \
   && rm -rf /var/cache/apk/*
 
 RUN ln -s /usr/bin/php7 /usr/bin/php
+
+ADD php.ini /etc/php7/php.ini
+
+ENV PHP_INI_SENDMAIL_PATH "sendmail -t -i"
+ENV PHP_INI_DATE_TIMEZONE "America/New_York"
+
 ADD install-composer.sh /usr/local/bin/install-composer.sh
 RUN install-composer.sh && mv composer.phar /usr/local/bin/composer
+
+
