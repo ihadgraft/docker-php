@@ -20,6 +20,9 @@ RUN apk update \
   && apk add php7-zip \
   && apk add php7-gd \
   && apk add php7-session \
+  && apk add ca-certificates wget \
   && rm -rf /var/cache/apk/*
 
 RUN ln -s /usr/bin/php7 /usr/bin/php
+ADD install-composer.sh /usr/local/bin/install-composer.sh
+RUN install-composer.sh && mv composer.phar /usr/local/bin/composer
