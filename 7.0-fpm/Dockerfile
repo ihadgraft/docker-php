@@ -9,7 +9,4 @@ RUN ln -s /usr/sbin/php-fpm7 /usr/sbin/php-fpm
 
 ADD www.conf /etc/php7/php-fpm.d/www.conf
 
-ENV APP_ROOT /var/www/html
-
-
 CMD ["php-fpm", "-F"]
