@@ -1,4 +1,4 @@
-FROM ihadgraft/php:7.0
+FROM dukewebservices/php:7.0
 
 RUN apk update \
   && apk add php7-fpm \
